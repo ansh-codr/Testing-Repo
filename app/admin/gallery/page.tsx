@@ -142,7 +142,11 @@ export default function AdminGallery() {
 
   const updateMetadata = (index: number, field: string, value: string) => {
     const newMetadata = [...uploadMetadata];
-    newMetadata[index] = { ...newMetadata[index], [field]: value };
+    if (field === 'tags') {
+      newMetadata[index] = { ...newMetadata[index], [field]: value.split(',').map(t => t.trim()) };
+    } else {
+      newMetadata[index] = { ...newMetadata[index], [field]: value };
+    }
     setUploadMetadata(newMetadata);
   };
 
@@ -364,7 +368,7 @@ export default function AdminGallery() {
                             type="text"
                             placeholder="Tags (comma separated)"
                             value={uploadMetadata[index]?.tags?.join(', ') || ''}
-                            onChange={(e) => updateMetadata(index, 'tags', e.target.value.split(',').map(t => t.trim()))}
+                            onChange={(e) => updateMetadata(index, 'tags', e.target.value)}
                             className="px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400"
                           />
                           <input
