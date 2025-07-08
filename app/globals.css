@@ -1,0 +1,437 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Futuristic Custom Styles */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background: #0A0A23;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(10, 10, 35, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00d4ff, #9D00FF);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #FFD700, #00d4ff);
+}
+
+/* Deep Space Background */
+.cosmic-bg {
+  background: linear-gradient(135deg, #0A0A23 0%, #000000 50%, #0f0c29 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.cosmic-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(157, 0, 255, 0.2) 0%, transparent 50%);
+  animation: cosmic-pulse 12s ease-in-out infinite;
+}
+
+@keyframes cosmic-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+/* Advanced Glowing Effects */
+.glow-border {
+  border: 1px solid rgba(0, 212, 255, 0.4);
+  box-shadow: 
+    0 0 20px rgba(0, 212, 255, 0.2),
+    inset 0 0 20px rgba(0, 212, 255, 0.05),
+    0 0 40px rgba(0, 212, 255, 0.1);
+  transition: all 0.4s ease;
+}
+
+.glow-border:hover {
+  border-color: rgba(0, 212, 255, 0.8);
+  box-shadow: 
+    0 0 30px rgba(0, 212, 255, 0.4),
+    inset 0 0 30px rgba(0, 212, 255, 0.1),
+    0 0 60px rgba(0, 212, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.glow-text {
+  text-shadow: 
+    0 0 10px rgba(0, 212, 255, 0.6),
+    0 0 20px rgba(0, 212, 255, 0.4),
+    0 0 30px rgba(0, 212, 255, 0.2);
+}
+
+.golden-glow {
+  background: linear-gradient(135deg, #FFD700, #FFA500, #FF8C00);
+  box-shadow: 
+    0 0 20px rgba(255, 215, 0, 0.4),
+    0 4px 15px rgba(255, 215, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.golden-glow::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.golden-glow:hover {
+  box-shadow: 
+    0 0 30px rgba(255, 215, 0, 0.6),
+    0 6px 20px rgba(255, 215, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* Enhanced Glass Morphism */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 0 20px rgba(0, 212, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+  transition: left 0.8s ease;
+}
+
+.glass-card-hover {
+  transition: all 0.4s ease;
+}
+
+.glass-card-hover:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(0, 212, 255, 0.4);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 16px 50px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(0, 212, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.glass-card-hover:hover::before {
+  left: 100%;
+}
+
+/* Futuristic Input */
+.futuristic-input {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  color: #e0e0e0;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.futuristic-input:focus {
+  outline: none;
+  border-color: #00d4ff;
+  box-shadow: 
+    0 0 20px rgba(0, 212, 255, 0.4),
+    inset 0 0 20px rgba(0, 212, 255, 0.1),
+    0 0 40px rgba(0, 212, 255, 0.2);
+  background: rgba(0, 0, 0, 0.6);
+  transform: scale(1.02);
+}
+
+.futuristic-input::placeholder {
+  color: rgba(224, 224, 224, 0.4);
+}
+
+/* Advanced Particle Animation */
+@keyframes float-complex {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg) scale(1); 
+  }
+  25% { 
+    transform: translateY(-15px) rotate(90deg) scale(1.1); 
+  }
+  50% { 
+    transform: translateY(-5px) rotate(180deg) scale(0.9); 
+  }
+  75% { 
+    transform: translateY(-20px) rotate(270deg) scale(1.2); 
+  }
+}
+
+.floating-particle {
+  animation: float-complex 8s ease-in-out infinite;
+}
+
+/* Holographic Text */
+.holographic-text {
+  background: linear-gradient(45deg, #00d4ff, #FFD700, #9D00FF, #FF00F7, #00d4ff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: holographic-flow 4s ease-in-out infinite;
+  text-shadow: 
+    0 0 30px rgba(0, 212, 255, 0.5),
+    0 0 60px rgba(255, 215, 0, 0.3);
+}
+
+@keyframes holographic-flow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Neon Border Animation */
+@keyframes neon-pulse {
+  0%, 100% { 
+    border-color: rgba(0, 212, 255, 0.4);
+    box-shadow: 
+      0 0 20px rgba(0, 212, 255, 0.3),
+      inset 0 0 20px rgba(0, 212, 255, 0.1);
+  }
+  25% { 
+    border-color: rgba(255, 215, 0, 0.6);
+    box-shadow: 
+      0 0 30px rgba(255, 215, 0, 0.4),
+      inset 0 0 30px rgba(255, 215, 0, 0.1);
+  }
+  50% { 
+    border-color: rgba(157, 0, 255, 0.6);
+    box-shadow: 
+      0 0 30px rgba(157, 0, 255, 0.4),
+      inset 0 0 30px rgba(157, 0, 255, 0.1);
+  }
+  75% { 
+    border-color: rgba(255, 0, 247, 0.6);
+    box-shadow: 
+      0 0 30px rgba(255, 0, 247, 0.4),
+      inset 0 0 30px rgba(255, 0, 247, 0.1);
+  }
+}
+
+.neon-border {
+  animation: neon-pulse 3s ease-in-out infinite;
+}
+
+/* Typography */
+.font-orbitron {
+  font-family: 'Orbitron', monospace;
+}
+
+.font-exo {
+  font-family: 'Exo 2', sans-serif;
+}
+
+.font-space {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Loading Animation */
+@keyframes pulse-glow {
+  0%, 100% { 
+    opacity: 0.6;
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.6);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Matrix-style scanning effect */
+@keyframes matrix-scan {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+.matrix-scan {
+  animation: matrix-scan 4s linear infinite;
+}
+
+/* Responsive text */
+@media (max-width: 640px) {
+  .text-responsive-xl {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media (min-width: 641px) {
+  .text-responsive-xl {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-responsive-xl {
+    font-size: 4rem;
+    line-height: 4.5rem;
+  }
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Focus styles */
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid rgba(0, 212, 255, 0.6);
+  outline-offset: 2px;
+}
+
+/* Data visualization effects */
+.data-stream {
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(0, 212, 255, 0.1) 25%, 
+    rgba(0, 212, 255, 0.3) 50%, 
+    rgba(0, 212, 255, 0.1) 75%, 
+    transparent 100%
+  );
+  animation: data-flow 2s linear infinite;
+}
+
+@keyframes data-flow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Hexagonal grid pattern */
+.hex-pattern {
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1) 2px, transparent 2px);
+  background-size: 30px 30px;
+  animation: hex-drift 20s linear infinite;
+}
+
+@keyframes hex-drift {
+  0% { background-position: 0 0; }
+  100% { background-position: 30px 30px; }
+}

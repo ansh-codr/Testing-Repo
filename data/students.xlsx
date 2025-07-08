@@ -1,0 +1,6 @@
+id,name,class,section,rollNo,dob,fatherName,motherName,phone,email,address,subjects,attendance,fees,passcode
+DPS001,Arjun Sharma,10,A,15,2008-03-15,Rajesh Sharma,Priya Sharma,9876543210,arjun.sharma@email.com,"123 Main St, Mathura","Math,Science,English,Hindi,Social Science",95%,Paid,1234
+DPS002,Priya Gupta,10,B,12,2008-07-22,Suresh Gupta,Meera Gupta,9876543211,priya.gupta@email.com,"456 Park Ave, Mathura","Math,Science,English,Hindi,Social Science",92%,Paid,5678
+DPS003,Rohit Kumar,9,A,8,2009-01-10,Vikram Kumar,Sunita Kumar,9876543212,rohit.kumar@email.com,"789 School Rd, Mathura","Math,Science,English,Hindi,Social Science",88%,Pending,9012
+DPS004,Anjali Singh,9,B,20,2009-05-18,Ramesh Singh,Kavita Singh,9876543213,anjali.singh@email.com,"321 Temple St, Mathura","Math,Science,English,Hindi,Social Science",91%,Paid,3456
+DPS005,Karan Yadav,8,A,5,2010-09-12,Mahesh Yadav,Pooja Yadav,9876543214,karan.yadav@email.com,"654 River Rd, Mathura","Math,Science,English,Hindi,Social Science",87%,Paid,7890
