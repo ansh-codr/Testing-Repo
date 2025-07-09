@@ -75,7 +75,7 @@ service firebase.storage {
 ### 🌐 Netlify Deployment
 
 #### Step 1: Environment Variables
-Create `.env.local` file with your Firebase config:
+Create `.env` file with your Firebase config:
 ```env
 NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key_here
 NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
@@ -84,6 +84,8 @@ NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
 NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
 ```
+
+**Important**: Make sure your `.env` file is in the root directory of your project and contains all the required Firebase configuration variables.
 
 #### Step 2: Deploy to Netlify
 1. **Connect Repository**:
@@ -163,12 +165,13 @@ npm run build
 git push origin main
 ```
 
-### 📞 Support
+### 📞 Configuration Required
 
-- **Made by**: Havoc_Erebus
-- **Contact**: 9997783484
-- **Email**: dhruv.public.school.adeeng@gmail.com
-- **School**: Dhruv Public School Aring, Mathura
+After deployment, you need to:
+1. Update all placeholder content with actual school information
+2. Add real contact details, principal information, and statistics
+3. Upload actual school photos to replace sample images
+4. Configure Firebase with your school's data
 
 ### 🔄 Updating Student Data
 

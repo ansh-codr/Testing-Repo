@@ -393,9 +393,7 @@
 }
 
 /* Smooth transitions */
-* {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
+/* Removed global transition to prevent loading issues */
 
 /* Focus styles */
 button:focus,
@@ -404,6 +402,7 @@ textarea:focus,
 select:focus {
   outline: 2px solid rgba(0, 212, 255, 0.6);
   outline-offset: 2px;
+  transition: outline 0.2s ease;
 }
 
 /* Data visualization effects */

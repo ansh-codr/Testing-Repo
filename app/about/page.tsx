@@ -107,23 +107,18 @@ export default function About() {
                 <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center">
                   <Users className="h-16 w-16 text-white" />
                 </div>
-                <h2 className="text-3xl font-bold text-white mb-2">Mahesh Chand Yadav</h2>
+                <h2 className="text-3xl font-bold text-white mb-2">[Principal Name]</h2>
                 <p className="text-xl text-yellow-400 mb-4">Principal</p>
-                <p className="text-gray-300 mb-6">B.Sc, B.Ed, M.A, Dip.in.Comp, LL.B</p>
+                <p className="text-gray-300 mb-6">[Qualifications]</p>
               </div>
               
               <div className="space-y-6 text-gray-300">
                 <p className="text-lg leading-relaxed">
-                  With over two decades of experience in education, Mr. Mahesh Chand Yadav 
-                  brings a wealth of knowledge and passion to Dhruv Public School. His diverse 
-                  academic background and commitment to excellence have been instrumental in 
-                  shaping the school's educational philosophy.
+                  [Principal's background and experience information]
                 </p>
                 
                 <p className="text-lg leading-relaxed">
-                  Under his leadership, the school has achieved remarkable milestones in academic 
-                  performance, co-curricular activities, and character development. His vision 
-                  of holistic education continues to inspire both students and faculty.
+                  [Principal's achievements and vision for the school]
                 </p>
               </div>
             </GlassCard>
@@ -193,7 +188,7 @@ export default function About() {
               transition={{ duration: 0.6 }}
             >
               <GlassCard className="text-center">
-                <div className="text-4xl font-bold text-yellow-400 mb-2">500+</div>
+                <div className="text-4xl font-bold text-yellow-400 mb-2">[Number]</div>
                 <p className="text-white text-lg">Students</p>
               </GlassCard>
             </motion.div>
@@ -204,7 +199,7 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <GlassCard className="text-center">
-                <div className="text-4xl font-bold text-yellow-400 mb-2">50+</div>
+                <div className="text-4xl font-bold text-yellow-400 mb-2">[Number]</div>
                 <p className="text-white text-lg">Faculty Members</p>
               </GlassCard>
             </motion.div>
@@ -215,7 +210,7 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <GlassCard className="text-center">
-                <div className="text-4xl font-bold text-yellow-400 mb-2">95%</div>
+                <div className="text-4xl font-bold text-yellow-400 mb-2">[Rate]</div>
                 <p className="text-white text-lg">Success Rate</p>
               </GlassCard>
             </motion.div>

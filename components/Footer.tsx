@@ -54,21 +54,21 @@ export default function Footer() {
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-cyan-400" />
                 <div>
-                  <p className="font-exo font-medium">8532850782</p>
-                  <p className="text-sm font-exo">9997783484</p>
+                  <p className="font-exo font-medium">[Phone Number]</p>
+                  <p className="text-sm font-exo">[Alt Phone]</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-cyan-400" />
                 <div>
-                  <p className="text-sm font-exo">dhruv.public.school.adeeng@gmail.com</p>
+                  <p className="text-sm font-exo">[Email Address]</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="h-4 w-4 text-cyan-400 mt-1" />
                 <div>
-                  <p className="text-sm font-exo">Dhruv Public School Aring</p>
-                  <p className="text-sm font-exo">Mathura, Uttar Pradesh</p>
+                  <p className="text-sm font-exo">[School Address]</p>
+                  <p className="text-sm font-exo">[City, State]</p>
                 </div>
               </div>
             </div>
@@ -78,9 +78,9 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-orbitron font-semibold text-cyan-300 glow-text">Leadership</h3>
             <div className="text-gray-400">
-              <p className="font-exo font-medium text-gray-300">Mahesh Chand Yadav</p>
+              <p className="font-exo font-medium text-gray-300">[Principal Name]</p>
               <p className="text-sm text-cyan-400 font-exo font-medium">Principal</p>
-              <p className="text-sm font-exo">B.Sc, B.Ed, M.A, Dip.in.Comp, LL.B</p>
+              <p className="text-sm font-exo">[Qualifications]</p>
             </div>
             
             <div className="space-y-2">
@@ -133,12 +133,12 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-center md:text-left">
               <p className="text-gray-400 text-sm font-exo">
-                © 2024 Dhruv Public School Aring, Mathura. All rights reserved.
+                © 2024 Dhruv Public School Aring. All rights reserved.
               </p>
             </div>
             <div className="text-center md:text-right">
               <p className="text-gray-500 text-sm font-exo">
-                🪄 Crafted with care by <span className="font-medium text-cyan-400">Havoc_Erebus</span>
+                Designed with care for educational excellence
               </p>
             </div>
           </div>

@@ -43,22 +43,22 @@ export default function Contact() {
     {
       icon: <Phone className="h-6 w-6 text-yellow-400" />,
       title: "Phone Numbers",
-      details: ["8532850782", "9997783484"]
+      details: ["[Phone Number 1]", "[Phone Number 2]"]
     },
     {
       icon: <Mail className="h-6 w-6 text-yellow-400" />,
       title: "Email Address",
-      details: ["dhruv.public.school.adeeng@gmail.com"]
+      details: ["[Email Address]"]
     },
     {
       icon: <MapPin className="h-6 w-6 text-yellow-400" />,
       title: "Location",
-      details: ["Dhruv Public School Aring", "Mathura, Uttar Pradesh"]
+      details: ["[School Name]", "[City, State]"]
     },
     {
       icon: <Instagram className="h-6 w-6 text-yellow-400" />,
       title: "Social Media",
-      details: ["@dps_aring"]
+      details: ["[Social Handle]"]
     }
   ];
 
@@ -212,21 +212,20 @@ export default function Contact() {
                 <div className="space-y-4">
                   <div>
                     <h3 className="text-lg font-semibold text-yellow-400 mb-2">Principal</h3>
-                    <p className="text-white">Mahesh Chand Yadav</p>
-                    <p className="text-gray-300 text-sm">B.Sc, B.Ed, M.A, Dip.in.Comp, LL.B</p>
+                    <p className="text-white">[Principal Name]</p>
+                    <p className="text-gray-300 text-sm">[Qualifications]</p>
                   </div>
                   
                   <div>
                     <h3 className="text-lg font-semibold text-yellow-400 mb-2">School Type</h3>
-                    <p className="text-white">Co-Educational</p>
-                    <p className="text-gray-300 text-sm">CBSE Inspired Curriculum</p>
+                    <p className="text-white">[School Type]</p>
+                    <p className="text-gray-300 text-sm">[Curriculum Type]</p>
                   </div>
                   
                   <div>
                     <h3 className="text-lg font-semibold text-yellow-400 mb-2">Admission Process</h3>
                     <p className="text-gray-300 text-sm">
-                      Contact us for admission inquiries and school visits. 
-                      We welcome students from all backgrounds.
+                      [Admission process information and requirements]
                     </p>
                   </div>
                 </div>

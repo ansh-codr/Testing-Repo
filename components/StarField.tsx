@@ -25,7 +25,7 @@ export default function StarField() {
       const newParticles: Particle[] = [];
       const colors = ['#00d4ff', '#FFD700', '#ffffff', '#9D00FF', '#FF00F7'];
       
-      for (let i = 0; i < 200; i++) {
+      for (let i = 0; i < 100; i++) { // Reduced particle count for better performance
         newParticles.push({
           id: i,
           x: Math.random() * 100,
@@ -134,7 +134,6 @@ export default function StarField() {
             y: [0, Math.sin(particle.direction) * 30, 0],
             opacity: [particle.opacity, particle.opacity * 0.2, particle.opacity],
             scale: [1, 2, 1],
-            rotate: [0, 360],
           }}
           transition={{
             duration: particle.speed + 5,
