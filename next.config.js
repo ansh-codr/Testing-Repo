@@ -1,7 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  trailingSlash: true,
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -9,8 +7,8 @@ const nextConfig = {
     unoptimized: true,
     domains: ['images.pexels.com']
   },
+  // Remove output: 'export' to enable API routes
   // Environment variables are automatically loaded from .env files
-  // No need to manually specify them here
 };
 
 module.exports = nextConfig;

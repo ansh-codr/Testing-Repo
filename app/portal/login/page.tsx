@@ -20,38 +20,33 @@ export default function StudentLogin() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('/api/student-login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      // Mock authentication for static build
+      if (formData.studentId === 'DPS001' && formData.passcode === '1234') {
+        const mockStudent = {
+          id: 'DPS001',
+          name: 'Arjun Sharma',
+          class: '10',
+          section: 'A',
+          rollNo: '15',
+          dob: '2008-03-15',
+          fatherName: 'Rajesh Sharma',
+          motherName: 'Priya Sharma',
+          phone: '9876543210',
+          email: 'arjun.sharma@email.com',
+          address: '123 Main St, Mathura',
+          subjects: ['Math', 'Science', 'English', 'Hindi', 'Social Science'],
+          attendance: '95%',
+          fees: 'Paid'
+        };
 
-      const data = await response.json();
-
-      if (response.ok) {
-        // Store student data in localStorage
-        localStorage.setItem('studentData', JSON.stringify(data.student));
-        
-        toast.success('Login successful! Welcome back.', {
-          position: 'top-right',
-          autoClose: 3000,
-        });
-        
-        // Redirect to dashboard
+        localStorage.setItem('studentData', JSON.stringify(mockStudent));
+        toast.success('Login successful! Welcome back. (Demo: Use ID: DPS001, Passcode: 1234)');
         router.push('/portal/dashboard');
       } else {
-        toast.error(data.message || 'Invalid credentials. Please try again.', {
-          position: 'top-right',
-          autoClose: 5000,
-        });
+        toast.error('Invalid credentials. Demo login: ID: DPS001, Passcode: 1234');
       }
     } catch (error) {
-      toast.error('An error occurred. Please try again.', {
-        position: 'top-right',
-        autoClose: 5000,
-      });
+      toast.error('Login feature not available in static build');
     } finally {
       setIsLoading(false);
     }

@@ -26,69 +26,86 @@ export default function Gallery() {
   const fetchImages = async () => {
     setIsLoading(true);
     try {
-      const params = new URLSearchParams();
+      // Use static sample images for now since we're using static export
+      const sampleImages = [
+        {
+          id: 1,
+          category: 'facilities',
+          title: 'Modern Computer Lab',
+          description: 'State-of-the-art computer laboratory with latest technology',
+          imageUrl: 'https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=800'
+        },
+        {
+          id: 2,
+          category: 'student-life',
+          title: 'Students in Action',
+          description: 'Our students engaged in interactive learning',
+          imageUrl: 'https://images.pexels.com/photos/8471937/pexels-photo-8471937.jpeg?auto=compress&cs=tinysrgb&w=800'
+        },
+        {
+          id: 3,
+          category: 'events',
+          title: 'Annual Sports Day',
+          description: 'Celebrating athletic excellence and team spirit',
+          imageUrl: 'https://images.pexels.com/photos/2068975/pexels-photo-2068975.jpeg?auto=compress&cs=tinysrgb&w=800'
+        },
+        {
+          id: 4,
+          category: 'facilities',
+          title: 'Science Laboratory',
+          description: 'Well-equipped science lab for hands-on experiments',
+          imageUrl: 'https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg?auto=compress&cs=tinysrgb&w=800'
+        },
+        {
+          id: 5,
+          category: 'academics',
+          title: 'Classroom Learning',
+          description: 'Interactive teaching methods in modern classrooms',
+          imageUrl: 'https://images.pexels.com/photos/8471906/pexels-photo-8471906.jpeg?auto=compress&cs=tinysrgb&w=800'
+        },
+        {
+          id: 6,
+          category: 'student-life',
+          title: 'Cultural Program',
+          description: 'Students showcasing their talents in cultural events',
+          imageUrl: 'https://images.pexels.com/photos/8471738/pexels-photo-8471738.jpeg?auto=compress&cs=tinysrgb&w=800'
+        },
+        {
+          id: 7,
+          category: 'sports',
+          title: 'Basketball Court',
+          description: 'Modern sports facilities for physical development',
+          imageUrl: 'https://images.pexels.com/photos/1752757/pexels-photo-1752757.jpeg?auto=compress&cs=tinysrgb&w=800'
+        },
+        {
+          id: 8,
+          category: 'cultural',
+          title: 'Music Room',
+          description: 'Dedicated space for musical education and practice',
+          imageUrl: 'https://images.pexels.com/photos/164821/pexels-photo-164821.jpeg?auto=compress&cs=tinysrgb&w=800'
+        }
+      ];
+
+      // Filter images based on active filter and search query
+      let filteredImages = sampleImages;
+      
       if (activeFilter !== 'all') {
-        params.append('category', activeFilter);
+        filteredImages = filteredImages.filter(img => img.category === activeFilter);
       }
+      
       if (searchQuery) {
-        params.append('search', searchQuery);
+        const query = searchQuery.toLowerCase();
+        filteredImages = filteredImages.filter(img => 
+          img.title.toLowerCase().includes(query) ||
+          img.description.toLowerCase().includes(query) ||
+          img.category.toLowerCase().includes(query)
+        );
       }
-
-      const response = await fetch(`/api/gallery?${params.toString()}`);
-      const data = await response.json();
-
-      if (response.ok) {
-        setImages(data.data);
-      } else {
-        console.error('Failed to fetch images:', data.message);
-        // Fallback to sample images if API fails
-        setImages([
-          {
-            id: 1,
-            category: 'facilities',
-            title: 'Modern Computer Lab',
-            description: 'State-of-the-art computer laboratory with latest technology',
-            imageUrl: 'https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=800'
-          },
-          {
-            id: 2,
-            category: 'student-life',
-            title: 'Students in Action',
-            description: 'Our students engaged in interactive learning',
-            imageUrl: 'https://images.pexels.com/photos/8471937/pexels-photo-8471937.jpeg?auto=compress&cs=tinysrgb&w=800'
-          },
-          {
-            id: 3,
-            category: 'events',
-            title: 'Annual Sports Day',
-            description: 'Celebrating athletic excellence and team spirit',
-            imageUrl: 'https://images.pexels.com/photos/2068975/pexels-photo-2068975.jpeg?auto=compress&cs=tinysrgb&w=800'
-          },
-          {
-            id: 4,
-            category: 'facilities',
-            title: 'Science Laboratory',
-            description: 'Well-equipped science lab for hands-on experiments',
-            imageUrl: 'https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg?auto=compress&cs=tinysrgb&w=800'
-          },
-          {
-            id: 5,
-            category: 'academics',
-            title: 'Classroom Learning',
-            description: 'Interactive teaching methods in modern classrooms',
-            imageUrl: 'https://images.pexels.com/photos/8471906/pexels-photo-8471906.jpeg?auto=compress&cs=tinysrgb&w=800'
-          },
-          {
-            id: 6,
-            category: 'student-life',
-            title: 'Cultural Program',
-            description: 'Students showcasing their talents in cultural events',
-            imageUrl: 'https://images.pexels.com/photos/8471738/pexels-photo-8471738.jpeg?auto=compress&cs=tinysrgb&w=800'
-          }
-        ]);
-      }
+      
+      setImages(filteredImages);
     } catch (error) {
       console.error('Error fetching images:', error);
+      setImages([]);
     } finally {
       setIsLoading(false);
     }

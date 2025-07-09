@@ -48,19 +48,36 @@ export default function AdminDashboard() {
 
   const fetchData = async () => {
     try {
-      // Fetch statistics
-      const statsResponse = await fetch('/api/students/stats');
-      if (statsResponse.ok) {
-        const statsData = await statsResponse.json();
-        setStats(statsData.stats);
-      }
+      // Mock data for static build
+      setStats({
+        totalStudents: 500,
+        classCounts: {
+          '6': 45,
+          '7': 48,
+          '8': 52,
+          '9': 55,
+          '10': 58,
+          '11': 62,
+          '12': 60
+        },
+        feeStats: {
+          'Paid': 450,
+          'Pending': 50
+        },
+        attendanceStats: {
+          excellent: 300,
+          good: 150,
+          needsImprovement: 50
+        },
+        lastUpdated: new Date().toISOString()
+      });
 
-      // Fetch health status
-      const healthResponse = await fetch('/api/health');
-      if (healthResponse.ok) {
-        const healthData = await healthResponse.json();
-        setHealth(healthData.status);
-      }
+      setHealth({
+        server: 'running',
+        database: true,
+        studentData: true,
+        timestamp: new Date().toISOString()
+      });
     } catch (error) {
       console.error('Failed to fetch dashboard data:', error);
     } finally {

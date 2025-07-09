@@ -56,21 +56,64 @@ export default function StudentSearch() {
   const searchStudents = useCallback(async (query: string, filter: string) => {
     setIsLoading(true);
     try {
-      const params = new URLSearchParams();
-      if (query) params.append('search', query);
-      if (filter !== 'all') params.append('filter', filter);
+      // Mock student data for static build
+      const mockStudents = [
+        {
+          id: 'DPS001',
+          name: 'Arjun Sharma',
+          class: '10',
+          section: 'A',
+          rollNo: '15',
+          dob: '2008-03-15',
+          fatherName: 'Rajesh Sharma',
+          motherName: 'Priya Sharma',
+          phone: '9876543210',
+          email: 'arjun.sharma@email.com',
+          address: '123 Main St, Mathura',
+          subjects: ['Math', 'Science', 'English', 'Hindi', 'Social Science'],
+          attendance: '95%',
+          fees: 'Paid'
+        },
+        {
+          id: 'DPS002',
+          name: 'Priya Gupta',
+          class: '10',
+          section: 'B',
+          rollNo: '12',
+          dob: '2008-07-22',
+          fatherName: 'Suresh Gupta',
+          motherName: 'Meera Gupta',
+          phone: '9876543211',
+          email: 'priya.gupta@email.com',
+          address: '456 Park Ave, Mathura',
+          subjects: ['Math', 'Science', 'English', 'Hindi', 'Social Science'],
+          attendance: '92%',
+          fees: 'Paid'
+        }
+      ];
 
-      const response = await fetch(`/api/students?${params.toString()}`);
-      const data = await response.json();
-
-      if (response.ok) {
-        setStudents(data.data);
-        setFilteredStudents(data.data);
-      } else {
-        toast.error(data.message || 'Failed to search students');
+      // Filter based on query and filter
+      let filtered = mockStudents;
+      if (query) {
+        const searchQuery = query.toLowerCase();
+        filtered = filtered.filter(student => {
+          const searchableFields = [
+            student.name?.toLowerCase() || '',
+            student.id?.toLowerCase() || '',
+            student.class?.toLowerCase() || '',
+            student.fatherName?.toLowerCase() || '',
+            student.motherName?.toLowerCase() || ''
+          ];
+          return searchableFields.some(field => field.includes(searchQuery));
+        });
       }
+
+      setStudents(filtered);
+      setFilteredStudents(filtered);
     } catch (error) {
-      toast.error('An error occurred while searching');
+      console.error('Search error:', error);
+      setStudents([]);
+      setFilteredStudents([]);
     } finally {
       setIsLoading(false);
     }

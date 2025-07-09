@@ -28,27 +28,15 @@ export default function ExcelUpload() {
     if (!file) return;
 
     setIsUploading(true);
-    const formData = new FormData();
-    formData.append('file', file);
 
     try {
-      const response = await fetch('/api/upload-students', {
-        method: 'POST',
-        body: formData,
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        setUploadStatus('success');
-        toast.success('Excel file uploaded and processed successfully!');
-      } else {
-        setUploadStatus('error');
-        toast.error(data.message || 'Failed to upload file');
-      }
+      // Simulate upload for static build
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      setUploadStatus('success');
+      toast.success('Excel file uploaded and processed successfully! (Demo mode)');
     } catch (error) {
       setUploadStatus('error');
-      toast.error('An error occurred during upload');
+      toast.error('Upload feature not available in static build');
     } finally {
       setIsUploading(false);
     }
