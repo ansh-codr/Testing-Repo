@@ -9,9 +9,8 @@ const nextConfig = {
     unoptimized: true,
     domains: ['images.pexels.com']
   },
-  env: {
-    CUSTOM_KEY: 'my-value',
-  },
+  // Environment variables are automatically loaded from .env files
+  // No need to manually specify them here
 };
 
 module.exports = nextConfig;
