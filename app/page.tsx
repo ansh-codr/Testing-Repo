@@ -404,7 +404,6 @@ export default function Home() {
                   <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-10`} />
                   <motion.div 
                     className={`text-5xl font-orbitron font-bold ${stat.color} mb-3 glow-text relative z-10`}
-                    whileHover={{ scale: 1.1, y: -5 }}
                     animate={{ 
                       textShadow: [
                         `0 0 20px ${stat.color}`,
