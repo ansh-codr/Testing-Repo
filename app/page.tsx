@@ -414,8 +414,8 @@ export default function Home() {
                     }}
                     transition={{ 
                       textShadow: { duration: 2, repeat: Infinity },
-                      hover: { type: "spring", stiffness: 300 }
                     }}
+                    whileHover={{ scale: 1.1, y: -5 }}
                   >
                     {stat.number}
                   </motion.div>
