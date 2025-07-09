@@ -404,17 +404,8 @@ export default function Home() {
                   <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-10`} />
                   <motion.div 
                     className={`text-5xl font-orbitron font-bold ${stat.color} mb-3 glow-text relative z-10`}
-                    animate={{ 
-                      textShadow: [
-                        `0 0 20px ${stat.color}`,
-                        `0 0 40px ${stat.color}`,
-                        `0 0 20px ${stat.color}`
-                      ]
-                    }}
-                    transition={{ 
-                      textShadow: { duration: 2, repeat: Infinity },
-                    }}
                     whileHover={{ scale: 1.1, y: -5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
                     {stat.number}
                   </motion.div>
